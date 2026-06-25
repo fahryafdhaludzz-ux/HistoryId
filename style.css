@@ -265,3 +265,134 @@ body {
         linear-gradient(rgba(26,18,8,0.97), rgba(26,18,8,0.97)),
         url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
 }
+
+/* =========================
+   TIMELINE HISTORYID
+========================= */
+
+.timeline {
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(#f5c16a, #d97706);
+    border-radius: 20px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 80px;
+    margin-bottom: 35px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    top: 8px;
+    width: 32px;
+    height: 32px;
+    background: #f59e0b;
+    border: 4px solid #2c2117;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+.timeline-date {
+    color: #f5c16a;
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.timeline-content {
+    background: #2c2117;
+    border-radius: 18px;
+    padding: 22px;
+    border: 1px solid rgba(245, 193, 106, 0.2);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-6px);
+    border-color: #f59e0b;
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.25);
+}
+
+.timeline-content h4 {
+    color: #f5c16a;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: #e8d5b8;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+
+    .timeline::before {
+        left: 15px;
+    }
+
+    .timeline-item {
+        padding-left: 50px;
+    }
+
+    .timeline-item::before {
+        left: 1px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Efek membesar saat kursor menyentuh timeline */
+
+.timeline-simple .list-group-item {
+    background: #2c2117;
+    color: #e8d5b8;
+    border: 1px solid rgba(245, 193, 106, 0.25);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.timeline-simple .list-group-item:hover {
+    transform: scale(1.04);
+    border-color: #f59e0b;
+    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.3);
+    z-index: 10;
+}
+
+.timeline-simple .list-group-item h5 {
+    transition: color 0.3s ease;
+}
+
+.timeline-simple .list-group-item:hover h5 {
+    color: #ffd27a !important;
+}
+
+.modal {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
